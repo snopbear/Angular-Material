@@ -1,7 +1,6 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
 import * as Material from "@angular/material";
-
 
 @NgModule({
   imports: [
@@ -23,9 +22,9 @@ import * as Material from "@angular/material";
     Material.MatTabsModule,
     Material.MatSidenavModule,
     Material.MatListModule,
-    Material.MatCardModule
-
-
+    Material.MatCardModule,
+    Material.MatIconModule,
+    Material.MatProgressSpinnerModule
   ],
   exports: [
     Material.MatToolbarModule,
@@ -46,8 +45,10 @@ import * as Material from "@angular/material";
     Material.MatTabsModule,
     Material.MatSidenavModule,
     Material.MatListModule,
-    Material.MatCardModule
-
+    Material.MatCardModule,
+    Material.MatIconModule,
+    Material.MatProgressSpinnerModule
   ],
+  providers: [Material.MatIconRegistry]
 })
-export class MaterialModule { }
+export class MaterialModule {}

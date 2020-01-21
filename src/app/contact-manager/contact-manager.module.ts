@@ -5,25 +5,25 @@ import { FormsModule } from "@angular/forms";
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { MaterialModule } from "../shared/material.module";
 import { Routes, RouterModule } from "@angular/router";
-import { ContactManagerAppComponent } from './contact-manager-app.component';
-import { MainContentComponent } from './components/main-content/main-content.component';
-import { SideNavComponent } from './components/side-nav/side-nav.component';
-import { ToolbarComponent } from './components/toolbar/toolbar.component';
-
+import { ContactManagerAppComponent } from "./contact-manager-app.component";
+import { MainContentComponent } from "./components/main-content/main-content.component";
+import { SideNavComponent } from "./components/side-nav/side-nav.component";
+import { ToolbarComponent } from "./components/toolbar/toolbar.component";
+import { UserService } from "./service/_user/user.service";
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   {
     path: "",
     component: ContactManagerAppComponent,
     children: [
-
-      { path: "", component: MainContentComponent }
-    ]
+      { path: ":id", component: MainContentComponent },
+      { path: "", component: MainContentComponent }]
   },
   { path: "**", redirectTo: "" }
 ];
 
-// { path: ":id", component: MainContentComponent },
+
 
 @NgModule({
   imports: [
@@ -31,12 +31,15 @@ const routes: Routes = [
     MaterialModule,
     FormsModule,
     FlexLayoutModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    HttpClientModule
   ],
-  declarations: [ContactManagerAppComponent,
+  declarations: [
+    ContactManagerAppComponent,
     MainContentComponent,
     SideNavComponent,
     ToolbarComponent
-  ]
+  ],
+  providers: [UserService]
 })
 export class ContactManagerModule {}
