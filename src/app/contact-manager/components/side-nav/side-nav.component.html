@@ -4,7 +4,7 @@
 
 
 <mat-drawer-container class="app-sidenav-container" autosize>
-    <mat-drawer #drawer class="app-sidenav" [mode]="isScreenSmall() ? 'over' : 'side'" [opened]="isScreenSmall()" mat-elevation-z10>
+    <mat-drawer #drawer class="app-sidenav" [mode]="isScreenSmall() ? 'over' : 'side'" [opened]="!isScreenSmall()" mat-elevation-z10>
         <mat-toolbar color="primary">Contacts</mat-toolbar>
         <mat-list role="list">
             <mat-list-item role="listitem">Item 1</mat-list-item>
