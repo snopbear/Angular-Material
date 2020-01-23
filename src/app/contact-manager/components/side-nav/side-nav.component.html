@@ -3,7 +3,7 @@
 
 
 
-<mat-drawer-container class="app-sidenav-container" autosize>
+<mat-drawer-container class="app-sidenav-container" autosize [dir]="dir">
     <mat-drawer #sidenav  class="app-sidenav" [mode]="isScreenSmall() ? 'over' : 'side'" [opened]="!isScreenSmall()" mat-elevation-z10>
         <mat-toolbar color="primary">Contacts</mat-toolbar>
 
@@ -20,7 +20,9 @@
   
     <div class="app-sidenav-content">
 
-        <app-toolbar (toggleSidenav)="sidenav.toggle()"></app-toolbar>
+        <app-toolbar (toggleSidenav)="sidenav.toggle()"
+        (toggleDir)="toggleDir()"
+        ></app-toolbar>
         <div class="wrapper">
              <router-outlet></router-outlet>
        

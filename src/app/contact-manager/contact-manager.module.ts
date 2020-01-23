@@ -11,6 +11,8 @@ import { SideNavComponent } from "./components/side-nav/side-nav.component";
 import { ToolbarComponent } from "./components/toolbar/toolbar.component";
 import { UserService } from "./service/_user/user.service";
 import { HttpClientModule } from '@angular/common/http';
+import { NotesComponent } from './components/notes/notes.component';
+import { NewContactDialogComponent } from './components/new-contact-dialog/new-contact-dialog.component';
 
 const routes: Routes = [
   {
@@ -38,8 +40,13 @@ const routes: Routes = [
     ContactManagerAppComponent,
     MainContentComponent,
     SideNavComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    NotesComponent,
+    NewContactDialogComponent
   ],
-  providers: [UserService]
+  providers: [UserService],
+  entryComponents:[
+    NewContactDialogComponent
+  ]
 })
 export class ContactManagerModule {}
